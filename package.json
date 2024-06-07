@@ -1,0 +1,23 @@
+{
+  "name": "com.madpixel.madpixelcore",
+  "version": "2.0.1",
+  "displayName": "Mad Pixel Core",
+  "description": "AppMetrica, Applovin, Appsflyer and Unity Inapps",
+  "documentationUrl": "https://example.com/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "dependencies": {
+    "com.unity.purchasing": "4.4.1",
+    "com.google.external-dependency-manager": "1.2.179",
+    "io.appmetrica.analytics": "6.0.0",
+    "appsflyer-unity-plugin": "6.14.3",
+    "appsflyer-unity-adrevenue-generic-connector": "6.14.3"
+  },
+  "keywords": [],
+  "author": {
+    "name": "MadPixel",
+    "email": "n.skorova@madpixel.dev",
+    "url": "https://www.unity3d.com"
+  },
+  "unity": "2021.3"
+}

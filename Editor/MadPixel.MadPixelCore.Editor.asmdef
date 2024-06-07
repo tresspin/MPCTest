@@ -1,0 +1,20 @@
+{
+    "name": "MadPixelCore.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:415300e43d129aa48b0dce0088f431e9",
+        "GUID:a4cfc1a18fa3a469b96d885db522f42e",
+        "GUID:a10a05a8449c42519fd80f2b8b580de3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
