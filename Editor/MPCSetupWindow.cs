@@ -12,9 +12,9 @@ namespace MadPixel {
 
         #region Fields
         public static string CONFIGS_FOLDER = "Assets/MadPixel";
-        private const string PACKAGE_PATH = "Assets/MadPixel/MAXHelper/Configs/MaximumPack.unitypackage";
+        private const string PACKAGE_PATH = "Packages/com.madpixel.madpixelcore/Editor/UnityPackages/MaximumPack.unitypackage";
+        private const string MAX_INSTALL_PACKAGE = "Packages/com.madpixel.madpixelcore/Editor/UnityPackages/AppLovin-MAX-Unity-Plugin.unitypackage";
         private const string MEDIATIONS_PATH = "Assets/MAXSdk/Mediation/";
-        private const string MAX_INSTALL_PACKAGE = "Packages/MadPixelCore/Editor/UnityPackages/AppLovin-MAX-Unity-Plugin.unitypackage";
 
         private const string MPC_FOLDER = "https://github.com/MadPixelDevelopment/MadPixelCore/releases";
         private const string MAX_PACK_INDEPENDENT = "https://github.com/MadPixelDevelopment/MadPixelCore/raw/main/Assets/MadPixel/MAXHelper/Configs/MaximumPack.unitypackage";
@@ -374,7 +374,10 @@ namespace MadPixel {
             }
         }
 
-        private void CheckMaxVersion() {
+        private void CheckMaxVersion() {            
+		if (!Directory.Exists(MEDIATIONS_PATH)) {
+                return;
+            }
             string[] filesPaths = System.IO.Directory.GetFiles(MEDIATIONS_PATH);
             if (filesPaths != null && filesPaths.Length > 0) {
                 List<string> Paths = filesPaths.ToList();

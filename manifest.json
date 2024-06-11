@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+	"com.google.external-dependency-manager": "https://github.com/google-unity/external-dependency-manager.git#1.2.179",
+	"io.appmetrica.analytics": "https://github.com/appmetrica/appmetrica-unity-plugin.git#v6.0.0",
+	"appsflyer-unity-plugin": "https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git#upm",
+	"appsflyer-unity-adrevenue-generic-connector": "https://github.com/AppsFlyerSDK/appsflyer-unity-adrevenue-generic-connector.git#upm",
+  }
+}

@@ -115,9 +115,20 @@ public class MPCChecker {
 
     #region Check obsolete AM, AF, EDM4U folders
     private static void CheckObsoleteFiles() {
-        var oldSettings = AssetDatabase.LoadAssetAtPath<MAXCustomSettings>("Assets/MadPixel/MAXHelper/Configs/MAXCustomSettings.asset");
+        string oldPath = "Assets/MadPixel/MAXHelper/Configs/MAXCustomSettings.asset";
+        var oldSettings = AssetDatabase.LoadAssetAtPath<MAXCustomSettings>(oldPath);
         if (oldSettings != null) {
-            AssetDatabase.CreateAsset(oldSettings, MPCSetupWindow.CONFIGS_PATH);
+            FileUtil.MoveFileOrDirectory(oldPath, MPCSetupWindow.CONFIGS_PATH);
+            //AssetDatabase.CreateAsset(oldSettings, MPCSetupWindow.CONFIGS_PATH);
+            AssetDatabase.SaveAssets();
+        }        
+        
+        oldPath = "Assets/MadPixel/AnalyticsHelper/Analytics/FirebaseComp.cs";
+        var oldFbs = AssetDatabase.LoadAssetAtPath<MonoBehaviour>(oldPath);
+        if (oldFbs != null) {
+            FileUtil.MoveFileOrDirectory(oldPath, "Assets/MadPixel/Scripts/FirebaseComp.cs");
+            //AssetDatabase.CreateAsset(oldSettings, MPCSetupWindow.CONFIGS_PATH);
+            AssetDatabase.SaveAssets();
         }
 
         List<string> directoriesToDelete = new List<string>();
@@ -160,8 +171,8 @@ public class MPCChecker {
 
     public static bool HasMAXsdkInProject() {
         return Directory.Exists("Assets/MaxSdk") &&
-               Directory.Exists("Assets/MaxSdk/Sripts") &&
-               File.Exists("Assets/MaxSdk/Sripts/MaxSDK.cs");
+               Directory.Exists("Assets/MaxSdk/Scripts") &&
+               File.Exists("Assets/MaxSdk/Scripts/MaxSDK.cs");
     } 
     #endregion
 
@@ -169,11 +180,7 @@ public class MPCChecker {
 
     public static string GetVersion() {
         var assembly = typeof(MPCChecker).Assembly;
-
-        // See https://docs.unity3d.com/ScriptReference/PackageManager.PackageInfo.FindForAssembly.html
         var packageInfo = UnityEditor.PackageManager.PackageInfo.FindForAssembly(assembly);
-
-        // Finally we have access to the version!
         var version = packageInfo.version;
         return version;
     }
