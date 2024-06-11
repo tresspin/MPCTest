@@ -11,10 +11,19 @@ using MAXHelper;
 [InitializeOnLoad]
 public class MPCChecker {
     private static readonly List<string> ObsoleteDirectoriesToDelete = new List<string> {
-        "Assets/MadPixel",
+        "Assets/MadPixel/AnalyticsHelper",
+        "Assets/MadPixel/MobileInApps",
+        "Assets/MadPixel/SharedScripts",
+        "Assets/MadPixel/MAXHelper",
+
         "Assets/AppMetrica",
         "Assets/AppsFlyer",
         "Assets/ExternalDependencyManager",
+
+        "Assets/Editor Default Resources/Firebase",
+        "Assets/Firebase",
+        "Assets/Parse",
+        "Assets/Plugins/iOS/Firebase"
     };
 
     static MPCChecker() {
